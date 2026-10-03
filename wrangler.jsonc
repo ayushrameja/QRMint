@@ -1,0 +1,19 @@
+{
+  "$schema": "./node_modules/wrangler/config-schema.json",
+  "name": "qr-mint",
+  "account_id": "423419184139ad08e82cba83e7afb59c",
+  "compatibility_date": "2026-10-03",
+  "workers_dev": true,
+  "assets": {
+    "directory": "./out",
+    "not_found_handling": "404-page"
+  },
+  "preview_urls": false,
+  "routes": [
+    {
+      "pattern": "qrmint.ayush.im",
+      "custom_domain": true,
+      "zone_name": "ayush.im"
+    }
+  ]
+}
