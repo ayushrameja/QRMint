@@ -8,12 +8,13 @@
     "directory": "./out",
     "not_found_handling": "404-page"
   },
-  "preview_urls": false,
+  "preview_urls": true,
   "routes": [
     {
       "pattern": "qrmint.ayush.im",
       "custom_domain": true,
       "zone_name": "ayush.im"
     }
-  ]
+  ],
+  "previews": {}
 }

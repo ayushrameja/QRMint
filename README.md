@@ -28,8 +28,23 @@ The app is statically exported by Next.js into `out/` and served by the
 export and starts a local Workers preview; `deploy:cloudflare` builds and deploys
 the static assets using `wrangler.jsonc`.
 
-GitHub production builds and branch preview deployments require a separate
-Workers Builds connection after this migration is merged.
+Configure the existing Worker in Settings > Builds:
+
+| Setting | Value |
+| --- | --- |
+| Production branch | `main` |
+| Root directory | `/` |
+| Build command | `pnpm run build` |
+| Deploy command | `pnpm exec wrangler deploy` |
+| Preview command | `pnpm exec wrangler preview` |
+| Enable Preview builds | Enabled |
+| Build variable `PNPM_VERSION` | `11.3.0` |
+| Build variable `NODE_VERSION` | `24` |
+
+After the Git connection and deployment token are configured in Cloudflare,
+pushes to `main` deploy production and other branches create Preview URLs.
+`deploy:preview` builds and publishes a Preview from the current branch without
+changing production. `preview:cloudflare` remains the local preview command.
 
 ## Notes
 
