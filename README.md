@@ -16,8 +16,20 @@ Open [http://localhost:3000](http://localhost:3000).
 ```bash
 pnpm lint
 pnpm build
-pnpm start
+pnpm run preview:cloudflare
+pnpm run deploy:cloudflare
 ```
+
+## Cloudflare deployment
+
+The app is statically exported by Next.js into `out/` and served by the
+`qr-mint` Cloudflare Worker at https://qrmint.ayush.im. Run
+`pnpm install --frozen-lockfile` before building. `preview:cloudflare` builds the
+export and starts a local Workers preview; `deploy:cloudflare` builds and deploys
+the static assets using `wrangler.jsonc`.
+
+GitHub production builds and branch preview deployments require a separate
+Workers Builds connection after this migration is merged.
 
 ## Notes
 

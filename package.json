@@ -7,7 +7,9 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "deploy:cloudflare": "pnpm run build && wrangler deploy",
+    "preview:cloudflare": "pnpm run build && wrangler dev"
   },
   "dependencies": {
     "lucide-react": "^1.22.0",
@@ -24,6 +26,7 @@
     "eslint": "^9",
     "eslint-config-next": "16.2.9",
     "tailwindcss": "^4",
-    "typescript": "^5"
+    "typescript": "^5",
+    "wrangler": "4.146.0"
   }
 }
